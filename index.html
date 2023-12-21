@@ -1,12 +1,247 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyberspace Station</title>
+<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/main/weareofearth-minimal_line-patch-blank-2023-lo%2B.ico">
+<style>
+body 
+{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* 
+{
+  box-sizing: border-box;
+}
+
+.responsive-image
+{
+  width: 25%;
+  height: auto;
+}
+  
+.header-section 
+{
+  width: 99%;
+  text-align: center;
+  background-color: #ffffff;
+  color: black;
+}
+ 
+.block 
+ {
+  display: inline-block;
+  border: none;
+  outline: 0;
+  width: 20%;
+  padding: 12px;
+  background-color: #000000;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+     cursor: pointer;
+}
+  
+.block:hover 
+{
+  background-color: lightgray;
+  color: gray;
+}
+
+html
+{
+  scroll-behavior: smooth;
+}
+  
+a 
+{
+  text-decoration: none;
+  color: DodgerBlue;
+}
+  
+a:hover
+{
+    color: Aqua;
+}
+  
+.game-section 
+{
+  padding-top: 50px;
+  padding-bottom: 25px;
+  width: 75%;
+  background-color: #ffffff;
+  color: black;
+}
+
+.dot
+{
+  height: 5px;
+  width: 5px;
+  background-color: #000;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.text-section 
+{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 74%;
+  text-align: left;
+  background-color: #ffffff;
+  color: black;
+}
+
+.column 
+{
+  float: left;
+  height: 600px;
+}
+  
+.left 
+{
+  width: 66%;
+}
+  
+.right 
+{
+  width: 33%;
+}
+
+.row:after 
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) 
+{
+  .column,
+  .left,
+  .right
+{
+  height: 100%;
+  width: 100%;
+}
+
+</style>   
 </head>
+  
 <body>
+ 
+<!--Start HEADER-->
+<div id="top" class="header-section">
+<center>
+<h1>WE ARE OF Earth</h1>
+<h3 style="color:gray;">CYBERSPACE STATION WEBGL</h3>
+<img src="https://github.com/arcadearthur/arcadearthur.github.io/blob/main/weareofearth-minimal_line-patch-blank-2023-HD+.png?raw=true" alt="LOGO" class="responsive-image" oncontextmenu="return false;" width="128" height="128">
+<p style="color:gray;">
+Click below to begin your mission briefing.
+</p>
+<a href= "#middle"><button class="block"><strong>ACCEPT</strong></button></a>
+<br>
+  <br>
+    <br>
+<hr style="height:1px; border-width:0; width: 74%; color:gray; background-color:gray">
+</center>
+</div>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<!--Start GAME IFRAME -->
+<center>
+<div class="game-section">
+<div id="middle" style="width: 99%; height: 0; padding-bottom: 57%; position: relative;">
+<iframe frameborder="1px" src="https://itch.io/embed-upload/9323333?color=ffffff" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; max-width: 99%;"></iframe>
+</div>
+</div>
+</center>
+  
+<!--Start DESCRIPTION -->
+<center>
+<div class="text-section">
 
-</body>
+<h2>FACT SHEET</h2>
+
+<div class="row">
+
+<!-- LEFT -->
+<div class="column left" style="background-color:#ffffff;">
+<h3>Description</h3>
+<p style="color:gray;">
+Asteroid Hunter is a sci-fi story that takes place in a distant place, in the not-too-distant future.
+<br>
+  <br>
+Players assume the role of astronaut trainees reporting to Cyberspace Command to log the required amount of hours in training sims in preparation for their rotation aboard the Orbital Colony Space Station L5 as active-duty crew member, tasked with keeping the galaxies clean and safe.<br>
+  <br>
+You are training, not gaming.
+<br>
+  <br>
+Blending a job sim and an arcade game into a casual RPG this experience tests your curiosity, hand-eye coordination, and whether or not you’ve got what it takes to qualify for the space program. <br> 
+  <br> 
+Good luck, Space Cowboy! 
+<br>
+</p>
+<h3>Features</h3>
+<h4>&emsp;Simulation:</h4>
+<p style="color:gray;">
+&emsp;<span class="dot"></span>
+&nbsp;Log in to your Console, accept jobs, complete jobs, and get rewarded for your progress and accomplishments! 
+</p>
+<h4>&emsp;Experience:</h4> 
+<p style="color:gray;">
+&emsp;<span class="dot"></span>
+&nbsp;Practice piloting a drone through a high-speed space highway while operating the asteroid-busting weapons system! 
+</p>
+<h4>&emsp;Learn:</h4>
+<p style="color:gray;">
+&emsp;<span class="dot"></span>
+&nbsp;Take a break from simulation training and read first-hand accounts from other pilot and operator crews, gather knowledge from mission reports, memorize tips and tricks, and stay up to date on the latest news from around the galaxy! 
+</p>
+</div>
+
+<!-- RIGHT -->
+<div class="column right" style="background-color:#ffffff;">
+<h3>Team</h3>
+<p style="color:black">
+&emsp;<strong>Design:</strong>
+<br>
+  <br> 
+&emsp;<span class="dot"></span>
+&nbsp;<span style="color:gray">Audio - Paul Arthur</span>
+<br>
+&emsp;<span class="dot"></span>
+&nbsp;<span style="color:gray">UI/UX - Paul Arthur</span>
+<br>
+&emsp;<span class="dot"></span>
+&nbsp;<span style="color:gray">VFX - Paul Arthur</span>
+<br>
+  <br>
+&emsp;<strong>Development:</strong>
+<br>
+  <br> 
+&emsp;<span class="dot"></span>
+&nbsp;<span style="color:gray">Unity - Paul Arthur</span>
+<br>
+&emsp;<span class="dot"></span>
+&nbsp;<span style="color:gray">WAC - Naldy Castillo
+<br>
+  <br>
+&emsp;<a href="mailto:weareofearthcom@gmail.com">Send us an email</a>
+<br>
+  <br> 
+&emsp;<strong><a href="#top">TOP</a></strong>
+</p> 
+</div>
+  
+</div>
+
+</div>
+
+  
+</center>
+
+<!-- End-->
+  
+</body> 
 </html>
