@@ -144,8 +144,10 @@ u
 }
 
 <!-- SLIDER--> 
-
-.slidecolumn {
+.row > .column {
+  padding: 0 8px;
+}
+.slidercolumn {
   float: left;
   width: 25%;
 }
@@ -251,18 +253,18 @@ Click below to begin your mission briefing.
 <br>
 
 <!--IMAGES -->
- <center></center> 
+ <center>
 <div class="row">
-  <div class="slidecolumn">
+  <div class="slidercolumn">
     <img src="orbital_junker-banner-HD-NEW.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
   </div>
-  <div class="slidecolumn">
+  <div class="slidercolumn">
     <img src="PA-Cyberspace_Station-Orbital_Junker-SS-04+.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
   </div>
-  <div class="slidecolumn">
+  <div class="slidercolumn">
     <img src="PA-Cyberspace_Station-Orbital_Junker-SS-07+.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
   </div>
-  <div class="slidecolumn">
+  <div class="slidercolumn">
     <img src="orbital_junker-banner-HD-NEW.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
   </div>
 </div>
@@ -299,16 +301,16 @@ Click below to begin your mission briefing.
     </div>
 
 
-    <div class="slidecolumn">
+    <div class="slidercolumn">
       <img class="demo cursor" src="orbital_junker-banner-HD-NEW.png" style="width:100%" onclick="currentSlide(1)" alt="">
     </div>
-    <div class="slidecolumn">
+    <div class="slidercolumn">
       <img class="demo cursor" src="PA-Cyberspace_Station-Orbital_Junker-SS-04+.png" style="width:100%" onclick="currentSlide(2)" alt="">
     </div>
-    <div class="slidecolumn">
+    <div class="slidercolumn">
       <img class="demo cursor" src="PA-Cyberspace_Station-Orbital_Junker-SS-07+.pngg" style="width:100%" onclick="currentSlide(3)" alt="">
     </div>
-    <div class="slidecolumn">
+    <div class="slidercolumn">
       <img class="demo cursor" src="orbital_junker-banner-HD-NEW.png" style="width:100%" onclick="currentSlide(4)" alt="">
     </div>
   </div>
@@ -352,6 +354,7 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 </script>
+</center> 
   
 <!-- DESCRIPTION -->
 <center>
