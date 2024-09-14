@@ -259,14 +259,26 @@ Click below to begin your mission briefing.
 
 <!--IMAGES -->
 <center>
-<img id="myImg" src="orbital_junker-banner-HD-NEW.png" alt="" style="width:75%; max-width: 33%">
-<img id="myImg" src="PA-Cyberspace_Station-Orbital_Junker-SS-04+.png" alt="" style="width:75%; max-width: 33%">
-<img id="myImg" src="PA-Cyberspace_Station-Orbital_Junker-SS-07+.png" alt="" style="width:75%; max-width: 33%">
+<img id="myImg1" src="orbital_junker-banner-HD-NEW.png" alt="" style="width:75%; max-width: 33%">
+<img id="myImg2" src="PA-Cyberspace_Station-Orbital_Junker-SS-04+.png" alt="" style="width:75%; max-width: 33%">
+<img id="myImg3" src="PA-Cyberspace_Station-Orbital_Junker-SS-07+.png" alt="" style="width:75%; max-width: 33%">
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+  
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img02">
+  <div id="caption"></div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img03">
   <div id="caption"></div>
 </div>
 
@@ -276,8 +288,26 @@ Click below to begin your mission briefing.
 var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
+var img = document.getElementById("myImg1");
 var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+var img = document.getElementById("myImg2");
+var modalImg = document.getElementById("img02");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+var img = document.getElementById("myImg3");
+var modalImg = document.getElementById("img03");
 var captionText = document.getElementById("caption");
 img.onclick = function(){
   modal.style.display = "block";
