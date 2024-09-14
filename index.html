@@ -144,34 +144,24 @@ u
 }
 
 <!-- SLIDER--> 
-  
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+.slidecolumn {
+  float: left;
+  width: 25%;
 }
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
+ /* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
   width: auto;
   padding: 16px;
   margin-top: -50px;
   color: white;
   font-weight: bold;
   font-size: 20px;
+  transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
   -webkit-user-select: none;
@@ -189,7 +179,7 @@ u
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Number text (1/6) */
+/* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -198,27 +188,17 @@ u
   top: 0;
 }
 
-/* Caption Container */
+slideimg {
+  margin-bottom: -4px;
+}
+
 .caption-container {
   text-align: center;
-  background-color: #222;
+  background-color: black;
   padding: 2px 16px;
   color: white;
 }
 
-.sliderow:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six */
-.slidecolumn {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
 .demo {
   opacity: 0.6;
 }
@@ -227,6 +207,14 @@ u
 .demo:hover {
   opacity: 1;
 }
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} 
   
 </style>
 
@@ -263,33 +251,79 @@ Click below to begin your mission briefing.
 <br>
 
 <!--IMAGES -->
-<div class="container" style="width: 99%; height: 0;">
-  <CENTER>
-  <div class="mySlides">
-    <img src="orbital_junker-banner-HD-NEW.png" style="width:75.25%">
+ <center></center> 
+<div class="row">
+  <div class="slidecolumn">
+    <img src="orbital_junker-banner-HD-NEW.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
   </div>
+  <div class="slidecolumn">
+    <img src="PA-Cyberspace_Station-Orbital_Junker-SS-04+.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="slidecolumn">
+    <img src="PA-Cyberspace_Station-Orbital_Junker-SS-07+.png" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="slidecolumn">
+    <img src="orbital_junker-banner-HD-NEW.png" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
 
-  <div class="mySlides">
-    <img src="PA-Cyberspace_Station-Orbital_Junker-SS-04+.png" style="width:75.25%">
-  </div>
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
 
-  <div class="mySlides">
-    <img src="PA-Cyberspace_Station-Orbital_Junker-SS-07+.png" style="width:75.25%">
-  </div>
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="orbital_junker-banner-HD-NEW.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="PA-Cyberspace_Station-Orbital_Junker-SS-04+.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="PA-Cyberspace_Station-Orbital_Junker-SS-07+.png" style="width:100%">
+    </div>
     
-  <div class="mySlides">
-    <img src="orbital_junker-banner-HD-NEW.png" style="width:75.25%">
-  </div>
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="orbital_junker-banner-HD-NEW.png" style="width:100%">
+    </div>
     
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-    
-  <div class="caption-container">
-    <p id="caption"></p>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="slidecolumn">
+      <img class="demo cursor" src="orbital_junker-banner-HD-NEW.png" style="width:100%" onclick="currentSlide(1)" alt="">
+    </div>
+    <div class="slidecolumn">
+      <img class="demo cursor" src="PA-Cyberspace_Station-Orbital_Junker-SS-04+.png" style="width:100%" onclick="currentSlide(2)" alt="">
+    </div>
+    <div class="slidecolumn">
+      <img class="demo cursor" src="PA-Cyberspace_Station-Orbital_Junker-SS-07+.pngg" style="width:100%" onclick="currentSlide(3)" alt="">
+    </div>
+    <div class="slidecolumn">
+      <img class="demo cursor" src="orbital_junker-banner-HD-NEW.png" style="width:100%" onclick="currentSlide(4)" alt="">
+    </div>
   </div>
+</div>
 
 <script>
-let slideIndex = 1;
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
@@ -301,24 +335,23 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+      slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 </script>
-</CENTER>
   
 <!-- DESCRIPTION -->
 <center>
