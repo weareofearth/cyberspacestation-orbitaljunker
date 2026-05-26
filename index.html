@@ -42,17 +42,20 @@ body
 }
  
 .block 
- {
-  display: inline-block;
+{
+  display: inline-flex;     /* Changes to flex layout */
+  align-items: center;      /* Vertically centers text */
+  justify-content: center;   /* Horizontally centers text */
   border: none;
   outline: 0;
-  width: 20%;
-  padding: 12px;
+  width: auto;              /* Lets it shrink-wrap the text naturally */
+  min-width: 160px;         /* Ensures it doesn't get too small on mobile */
+  padding: 12px 24px;       /* Adds comfortable padding on the sides */
   background-color: #000000;
   color: white;
   font-size: 12px;
   text-align: center;
-     cursor: pointer;
+  cursor: pointer;
 }
   
 .block:hover 
