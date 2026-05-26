@@ -2,7 +2,6 @@
 <html>
 <head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5E9BVGSB4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -22,8 +21,7 @@ body
   font-family: Arial, Helvetica, sans-serif;
 }
 
-* 
-{
+* {
   box-sizing: border-box;
 }
 
@@ -45,7 +43,7 @@ body
 {
   display: inline-flex;     /* Changes to flex layout */
   align-items: center;      /* Vertically centers text */
-  justify-content: center;   /* Horizontally centers text */
+  justify-content: center;  /* Horizontally centers text */
   border: none;
   outline: 0;
   width: auto;              /* Lets it shrink-wrap the text naturally */
@@ -141,10 +139,10 @@ u
   .column,
   .left,
   .right
-{
-  height: 100%;
-  width: 100%;
-}
+  {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 /* SLIDER */
@@ -157,44 +155,68 @@ u
   color: black;
 }
   
-#myImg {
-  width: 100%; /* Full width */
+.pop-thumb {
+  width: 25%;
+  height: auto;
   cursor: pointer;
   transition: 0.3s;
 }
 
-#myImg:hover {opacity: 0.7;}
+.pop-thumb:hover {
+  opacity: 0.7;
+}
 
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
-  position: relative; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  position: fixed; /* Fixed relative to screen viewport */
+  z-index: 1000; /* Sit way on top */
+  padding-top: 100px; 
   left: 0;
   top: 0;
-  width: 76.25%; /* Full width */
-  overflow: auto; /* Enable scroll if needed */
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9); /* Dark background overlay */
 }
 
 /* Modal Content (image) */
 .modal-content {
   margin: auto;
   display: block;
-  width: 100%;
-  max-width: 100%;
+  width: 80%;
+  max-width: 700px;
 }
 
 /* Caption of Modal Image */
 #caption {
   margin: auto;
   display: block;
-  width: 100%;
-  max-width: 100%;
+  width: 80%;
+  max-width: 700px;
   text-align: center;
   color: #ccc;
   padding: 10px 0;
   height: 150px;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Add Animation */
@@ -220,8 +242,7 @@ u
 </head>
   
 <body>
- 
-<!-- HEADER -->
+
 <div id="top" class="header-section">
 <center>
 <h1>WE ARE OF EARTH</h1>
@@ -230,7 +251,7 @@ u
 <p style="color:gray;">
 click below to begin your mission briefing
 </p>
-<a href= "#middle"><button class="block"><strong><center>ACCEPT</center></strong></button></a>
+<a href="#middle"><button class="block"><strong>ACCEPT</strong></button></a>
 <br>
   <br>
     <br>
@@ -239,7 +260,6 @@ click below to begin your mission briefing
 </center>
 </div>
 
-<!-- GAME IFRAME -->
 <center>
   
 <div class="game-section">
@@ -252,70 +272,54 @@ click below to begin your mission briefing
 
 <br>
 
-<!--IMAGES -->
 <center>
 <div class="slider-section" style="width: 99%; padding-right: 12px; position: relative;">
   
-<img id="myImg1" src="images/orbital_junker-banner-HD++.png" alt="" style="max-width: 25%">
-<img id="myImg2" src="images/PA-Cyberspace_Station-Orbital_Junker-SS-04++.png" alt="" style="max-width: 25%">
-<img id="myImg3" src="images/PA-Cyberspace_Station-Orbital_Junker-SS-07+.png" alt="" style=" max-width: 25%";>
-  
-<!-- The Modal -->
-<div id="myModal" class="modal">
-  <img class="modal-content" id="img01" width="75.5%">
-  <div id="caption"></div>
+  <img class="pop-thumb" src="images/orbital_junker-banner-HD++.png" alt="Orbital Junker Banner View">
+  <img class="pop-thumb" src="images/PA-Cyberspace_Station-Orbital_Junker-SS-04++.png" alt="Orbital Junker - Gameplay View 04">
+  <img class="pop-thumb" src="images/PA-Cyberspace_Station-Orbital_Junker-SS-07+.png" alt="Orbital Junker - Gameplay View 07">
+    
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+    
 </div>
-  
-<div id="myModal" class="modal">
-  <img class="modal-content" id="img02" width="75.5%">
-  <div id="caption"></div>
-</div>
-
-<div id="myModal" class="modal">
-  <img class="modal-content" id="img03" width="75.5%">
-  <div id="caption"></div>
-</div>
-  
-</div>
-<center>
+</center>
 
 <script>
-// Get the modal
+// Find our unique layout popup objects
 var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg1");
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
-img.onclick = function()
-{
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
+var closeBtn = document.getElementsByClassName("close")[0];
+
+// Fetch all click-to-pop images via class identifiers
+var thumbnails = document.querySelectorAll(".pop-thumb");
+
+// Map popup logic to all elements dynamically
+thumbnails.forEach(function(img) {
+  img.onclick = function() {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+});
+
+// Close window logic when 'x' UI is clicked
+closeBtn.onclick = function() {
+  modal.style.display = "none";
 }
 
-var img = document.getElementById("myImg2");
-var modalImg = document.getElementById("img02");
-var captionText = document.getElementById("caption");
-img.onclick = function()
-{
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-var img = document.getElementById("myImg3");
-var modalImg = document.getElementById("img03");
-var captionText = document.getElementById("caption");
-img.onclick = function()
-{
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
+// Mobile layout feature: tap empty space out-of-bounds to dismiss instantly
+modal.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
 }
 </script>
   
-<!-- DESCRIPTION -->
 <center>
 
 <div class="text-section">
@@ -324,17 +328,16 @@ img.onclick = function()
 
 <div class="row">
 
-<!-- LEFT -->
 <div class="column left" style="background-color:#ffffff;">
 <h3>Description</h3>
 <p style="color:gray;">
 Ready for your first mission?
 <br>
   <br>
-A nostalgic tribute to the analog sci-fi era inspired by the retro-futuristic tech aesthetic and humanities technological development, “Cyberspace Station: Orbital Junker” is a modern take on the classic arcade shooter mixed with a narrative story experience wrapped in a job-sim, featuring a minimalistic employee UI/UX, an anthology of funny flash-fiction stories, random facts, and nebulas that create a beautiful ambient gameplay experience.
+A nostalgic tribute to the analog sci-fi era inspired by the retro-futuristic tech aesthetic and humanities technological development, “Cyberspace Station: Orbital Junker” is a modern take on the classic arcade shooter mixed with a narrative story experience wrapped in a job-sim, featuring a minimalistic employee UI/UX, an anthology of funny flash-fiction stories, random facts, and nebulas that create a beautiful ambient gameplay experience.
 <br>
   <br>
-You play as a newbie trainee responsible for spotting, tracking, and destroying asteroids and other space junk in service of the galactic expansion effort, all from the comfort of your virtual workstation.
+You play as a newbie trainee responsible for spotting, tracking, and destroying asteroids and other space junk in service of the galactic expansion effort, all from the comfort of your virtual workstation.
 <br>
   <br>
 See you soon, Space Cowboy!
@@ -367,7 +370,6 @@ Take a break and read first-hand accounts from other pilots and operator crews, 
       <br>
 </div>
 
-<!-- RIGHT -->
 <div class="column right" style="background-color:#ffffff;">
 <h3>Key Info</h3>
 <p style="color:gray;">
@@ -387,7 +389,7 @@ Take a break and read first-hand accounts from other pilots and operator crews, 
 <br> 
   <br> 
     <br> 
-&emsp;<strong></u><a href="#top">TOP</a></strong>
+&emsp;<strong><a href="#top">TOP</a></strong>
 </p> 
 </div>
   
@@ -397,7 +399,5 @@ Take a break and read first-hand accounts from other pilots and operator crews, 
 
 </center>
 
-<!-- END -->
-  
 </body> 
 </html>
